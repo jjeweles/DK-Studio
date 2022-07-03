@@ -6,19 +6,19 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
     <title>DK Studio</title>
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" class="rel">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/app.css') }}" class="rel">
 </head>
 <body>
 <div class="d-flex" id="wrapper">
-    <div class="border-end bg-white" id="sidebar-wrapper">
+    <div class="border-end bg-white side-nav" id="sidebar-wrapper">
         <div class="sidebar-heading border-bottom bg-light">DK Studio</div>
         <div class="list-group list-group-flush">
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">MMA Entry</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Nascar Entry</a>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Optimizal Lineup</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Optimal Lineup</a>
             <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Results</a>
         </div>
     </div>
@@ -33,10 +33,12 @@
             </div>
         </nav>
         <div class="container-fluid">
-            <h1 class="mt-4">Simple Sidebar</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci aliquid animi delectus dicta
-                doloremque doloribus esse labore, molestiae nesciunt odit officia officiis possimus quidem quis
-                reiciendis reprehenderit sequi totam.
+            <h1 class="mt-4">DK Draft Studio by <em>jjeweles</em></h1>
+            <p><strong>What It Is:</strong>
+            <ul>
+                <li>A tool for drafting your own DK lineup</li>
+                <li>A tool for analyzing your own DK lineup</li>
+            </ul>
             </p>
         </div>
     </div>
