@@ -3,6 +3,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtWebEngineWidgets import *
 from PyQt5.QtWidgets import QApplication
 from threading import Timer
+import os
 import sys
 from flask_sqlalchemy import SQLAlchemy
 
@@ -11,6 +12,7 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dkstudio.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+os.environ["QTWEBENGINE_CHROMIUM_FLAGS"] = "--enable-logging --log-level=3"
 
 
 class MMA(db.Model):
@@ -48,4 +50,4 @@ if __name__ == "__main__":
     # start sub-thread to open the browser.
     Timer(1, lambda: ui("http://127.0.0.1:5000/")).start()
     db.create_all()
-    app.run(debug=True)
+    app.run(debug=False)
