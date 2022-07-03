@@ -208,7 +208,7 @@ to kick things off!
 
 [license-shield]: https://img.shields.io/github/license/jjeweles/DK-Studio.svg?style=for-the-badge
 
-[license-url]: https://github.com/jjeweles/DK-Studio/blob/main/LICENSE
+[license-url]: https://github.com/jjeweles/DK-Studio/blob/master/LICENSE
 
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 
