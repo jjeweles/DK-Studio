@@ -1,7 +1,40 @@
 body {
     background-color: #d7d8da;
+    font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-.side-nav {
+/* SIDE NAVIGATION STYLING */
+.side-nav, .top-nav {
     background-color: #d7d8da !important;
+}
+
+/* TOGGLE NAVIGATION BUTTON STYLING */
+.btn-primary {
+    background-color: #111;
+    border: none;
+}
+
+.btn-primary:focus {
+    background-color: #111;
+    border: none;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background-color: #333;
+    border: none;
+}
+
+/* FORM STYLING */
+input {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.form-group {
+    margin-top: 10px;
+}
+
+.form-control {
+    margin-top: 10px;
 }

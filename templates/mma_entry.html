@@ -1,0 +1,46 @@
+{% include 'includes/header.html' %}
+
+<div id="page-content-wrapper">
+    <nav class="navbar top-nav navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h1 class="mt-4">MMA/UFC Entries</h1>
+        <form class="mt-3" action="{{ url_for('add_mma_entry') }}" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fighter_name">Fighter Name</label>
+                    <input type="text" class="form-control" id="fighter_name" placeholder="Name" name="fighter_name"
+                           required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="fighter_points">Fighter Points</label>
+                    <input type="number" class="form-control" id="fighter_points" placeholder="Points"
+                           name="fighter_points" min="0" max="300" step="any" required>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="mr-sm-2 sr-only my-2" for="weight_class">Weight Class</label><br/>
+                <select class="custom-select mr-sm-2" id="weight_class" name="weight_class" required>
+                    <option value="" disabled selected hidden>Select a Class</option>
+                    <option value="Flyweight">Flyweight</option>
+                    <option value="Bantamweight">Bantamweight</option>
+                    <option value="Featherweight">Featherweight</option>
+                    <option value="Lightweight">Lightweight</option>
+                    <option value="Welterweight">Welterweight</option>
+                    <option value="Middleweight">Middleweight</option>
+                    <option value="Light Heavyweight">Light Heavyweight</option>
+                    <option value="Heavyweight">Heavyweight</option>
+                    <option value="Women's Strawweight">Women's Strawweight</option>
+                    <option value="Women's Flyweight">Women's Flyweight</option>
+                    <option value="Women's Bantamweight">Women's Bantamweight</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Add Entry</button>
+        </form>
+    </div>
+</div>
+
+{% include 'includes/footer.html' %}
