@@ -1,17 +1,91 @@
 {% include 'includes/header.html' %}
 
-    <div id="page-content-wrapper">
-        <nav class="navbar top-nav navbar-expand-lg navbar-light bg-light border-bottom">
-            <div class="container-fluid">
-                <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-            </div>
-        </nav>
+<div id="page-content-wrapper">
+    <nav class="navbar top-nav navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container-fluid">
-            <h1 class="mt-4">MMA/UFC Entries</h1>
-            <p>
-                MMA STUFF
-            </p>
+            <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h1 class="mt-4">Nascar Entries</h1>
+        <form class="mt-3" action="{{ url_for('add_nascar_entry') }}" method="post">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="driver_name">Driver Name</label>
+                    <input type="text" class="form-control" id="driver_name" placeholder="Name" name="driver_name"
+                           autofocus required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="driver_points">Driver Points</label>
+                    <input type="number" class="form-control" id="driver_points" placeholder="Points"
+                           name="driver_points" min="0" max="300" step="any" required>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label class="mr-sm-2 sr-only my-2" for="miles_in_race">Racetrack</label><br/>
+                <select class="custom-select mr-sm-2" id="miles_in_race" name="miles_in_race" required>
+                    <option value="" disabled selected hidden>Select a Track</option>
+                    <option value="Atlanta Motor Speedway">Atlanta Motor Speedway</option>
+                    <option value="Auto Club Speedway">Auto Club Speedway</option>
+                    <option value="Bristol Motor Speedway">Bristol Motor Speedway</option>
+                    <option value="Charlotte Motor Speedway">Charlotte Motor Speedway</option>
+                    <option value="Circuit of the Americas">Circuit of the Americas</option>
+                    <option value="Darlington Raceway">Darlington Raceway</option>
+                    <option value="Daytona Intl Speedway">Daytona Intl Speedway</option>
+                    <option value="Dover Motor Speedway">Dover Motor Speedway</option>
+                    <option value="Homestead-Miami Speedway">Homestead-Miami Speedway</option>
+                    <option value="Indianapolis Motor Speedway">Indianapolis Motor Speedway</option>
+                    <option value="Kansas Speedway">Kansas Speedway</option>
+                    <option value="Las Vegas Motor Speedway">Las Vegas Motor Speedway</option>
+                    <option value="LA Memorial Coliseum">LA Memorial Coliseum</option>
+                    <option value="Martinsville Speedway">Martinsville Speedway</option>
+                    <option value="Michigan Intl Speedway">Michigan Intl Speedway</option>
+                    <option value="Nashville Superspeedway">Nashville Superspeedway</option>
+                    <option value="New Hampshire Motor Speedway">New Hampshire Motor Speedway</option>
+                    <option value="Phoenix Raceway">Phoenix Raceway</option>
+                    <option value="Pocono Raceway">Pocono Raceway</option>
+                    <option value="Richmond Raceway">Richmond Raceway</option>
+                    <option value="Road America">Road America</option>
+                    <option value="Sonoma Raceway">Sonoma Raceway</option>
+                    <option value="Talladega Superspeedway">Talladega Superspeedway</option>
+                    <option value="Texas Motor Speedway">Texas Motor Speedway</option>
+                    <option value="Watkins Glen">Watkins Glen</option>
+                    <option value="World Wide Tech Raceway">World Wide Tech Raceway</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">Add Entry</button>
+        </form>
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Driver Name</th>
+                            <th scope="col">Driver Points</th>
+                            <th scope="col">Racetrack</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for driver in drivers %}
+                            <tr>
+                                <td>{{ driver.driver_name }}</td>
+                                <td>{{ driver.driver_points }}</td>
+                                <td>{{ driver.miles_in_race }}</td>
+                                <td>
+                                    <a href="/delete_driver_entry/{{ driver.id }}">
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+</div>
 
 {% include 'includes/footer.html' %}

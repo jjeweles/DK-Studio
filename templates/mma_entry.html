@@ -13,7 +13,7 @@
                 <div class="form-group col-md-6">
                     <label for="fighter_name">Fighter Name</label>
                     <input type="text" class="form-control" id="fighter_name" placeholder="Name" name="fighter_name"
-                           required>
+                           autofocus required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="fighter_points">Fighter Points</label>
@@ -40,6 +40,36 @@
             </div>
             <button type="submit" class="btn btn-primary mt-4">Add Entry</button>
         </form>
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">Fighter Name</th>
+                            <th scope="col">Fighter Points</th>
+                            <th scope="col">Weight Class</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for fighter in fighters %}
+                            <tr>
+                                <td>{{ fighter.fighter_name }}</td>
+                                <td>{{ fighter.fighter_points }}</td>
+                                <td>{{ fighter.fighter_class }}</td>
+                                <td>
+                                    <a href="/delete_fighter_entry/{{ fighter.id }}">
+                                        <button type="button" class="btn btn-danger">Delete</button>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

@@ -1,0 +1,54 @@
+{% include 'includes/header.html' %}
+
+<div id="page-content-wrapper">
+    <nav class="navbar top-nav navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <button class="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <h1 class="mt-4">Optimal Lineup</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Fighter Name</th>
+                        <th scope="col">Fighter Points</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for fighter in fighters %}
+                        <tr>
+                            <td>{{ fighter.fighter_name }}</td>
+                            <td>{{ fighter.fighter_points }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Driver Name</th>
+                        <th scope="col">Driver Points</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for driver in drivers %}
+                        <tr>
+                            <td>{{ driver.driver_name }}</td>
+                            <td>{{ driver.driver_points }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'includes/footer.html' %}
